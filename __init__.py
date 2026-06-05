@@ -1161,8 +1161,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 
     # Output
     "PromptImage":"Output Prompt and Image ♾️Mixlab",
-    "SaveImageToLocal":"Save Image To Local ♾️Mixlab",
-    "SaveImageAndMetadata_":"Save Image Output ♾️Mixlab",
+    # "SaveImageToLocal":"Save Image To Local ♾️Mixlab",
+    # "SaveImageAndMetadata_":"Save Image Output ♾️Mixlab",
     "ComparingTwoFrames_":"Comparing Two Frames ♾️Mixlab",
 
     # Image
@@ -1171,8 +1171,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "GradientImage":"GradientImage ♾️Mixlab",
     "TransparentImage":"TransparentImage ♾️Mixlab",
     "ResizeImageMixlab":"Resize Image ♾️Mixlab",
-    "LoadImagesFromPath":"Load Images From Path ♾️Mixlab",
-    "LoadImagesFromURL":"Load Images From URL ♾️Mixlab",
+    # "LoadImagesFromPath":"Load Images From Path ♾️Mixlab",
+    # "LoadImagesFromURL":"Load Images From URL ♾️Mixlab",
     "LoadImagesToBatch":"Load Images(base64) ♾️Mixlab",
     "TextImage":"Text Image ♾️Mixlab",
     "EnhanceImage":"Enhance Image ♾️Mixlab",
