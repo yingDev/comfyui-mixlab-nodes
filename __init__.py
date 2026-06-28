@@ -448,7 +448,7 @@ async def new_request(self, method, url, *args, **kwargs):
     return await _original_request(self, method, url, *args, **kwargs)
 
 # 应用 Monkey Patch
-aiohttp.ClientSession._request = new_request
+
 import socket
 
 async def check_port_available(address, port):
@@ -657,7 +657,10 @@ async def chat_completions(request):
 
     return web.Response(body=generate(), content_type='text/event-stream')
 
-
+# < added by remux
+PromptServer.instance.app.add_routes([web.static('/mixlab/app', os.path.join(current_path, "webApp"))])
+# >
+'''< remved by remux: 用 web.static 以支持 br/gz
 @routes.get('/mixlab/app')
 async def mixlab_app_handler(request):
     html_file = os.path.join(current_path, "webApp/index.html")
@@ -669,7 +672,7 @@ async def mixlab_app_handler(request):
         return web.Response(text="HTML file not found", status=404)
 
 # web app模式独立
-@routes.get('/mixlab/app/{filename:.*}')
+# @routes.get('/mixlab/app/{filename:.*}')
 async def static_file_handler(request):
     filename = request.match_info['filename']
     file_path = os.path.join(current_path, "webApp", filename)
@@ -692,7 +695,7 @@ async def static_file_handler(request):
             return web.Response(text=file_data, content_type=content_type)
     else:
         return web.Response(text="File not found", status=404)
-
+'''
 
 @routes.post('/mixlab/workflow')
 async def mixlab_workflow_hander(request):
